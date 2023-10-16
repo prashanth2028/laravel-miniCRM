@@ -11,7 +11,7 @@
         <div class="card">
             <div class="card-body">
                 <p style="font-size:20px; font-weight:bold;">Create New Employee</p>
-                <form action="{{route('company.store')}} " class="was-validated" method="POST" novalidate>
+                <form action="{{route('company.store')}} " class="was-validated" method="POST" enctype="multipart/form-data" novalidate>
                     @csrf
                     <div class="form-group has-validation">
                         <label for="name">Name</label>

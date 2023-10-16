@@ -14,7 +14,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        $companies = Company::latest()->get();
+        $companies = Company::latest()->paginate(1);
         return view('companies.index' ,compact('companies'));
     }
 
@@ -32,6 +32,8 @@ class CompanyController extends Controller
     public function store(CompanyRequest $request)
     {
         // dd($request);
+        $imagename = time(). '.' . $request->logo->extension();
+        $request->logo->move(public_path('logo'),$imagename);
         $validatedData = $request->validated();
          Company::create($validatedData);
 

@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="phone">phone</label>
+                    <label for="logo">logo</label>
                     <input type="file" class="form-control" value="{{$company->logo}} " readonly>
                 </div>
 
